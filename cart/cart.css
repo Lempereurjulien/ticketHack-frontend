@@ -15,53 +15,11 @@ body {
 
 
 
-#header {
-    display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   border: 0.5 black solid;
-   background-color: #ffffff;
-
-    grid-row-start: 1;
-    grid-row-end: 2;
-  
-    grid-column-start: 1;
-    grid-column-end: 5;
-    padding-left: 2%;
-    padding-right: 2%;
-
-
-  }
-
-.logo {
-    justify-content: flex-start;
-}
-
-
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-}
-h1 {
-    color:rgb(0, 255, 255),
-}
-
-p {
+  p {
     color: black;
     padding: 5%;
 }
-#btn-cart {
-    color:black;
 
-}
-
-#btn-booking {
-    color:black;
-
-}
 
 
 #cart {
