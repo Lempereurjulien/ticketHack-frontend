@@ -2,17 +2,43 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+<div class="title" >
+    <span id="slogan">Explore the world effortlessly by train !</span>
+    <p>Compare book and enjoy cheap prices for train tickets: your journey starts on TicketHack.</p>
+</div>
 
+<div class="presentationCard">
+    <div id="search_card" class="card">
+        <input type="text" id="departure" value="Paris">
+        <input type="text" id="arrival" value="Lyon">
+        <input type="date" id="search_date" >
+        <button id="search_button" onclick="searchTrips()" >Search</button>
+    </div>
+    <div id="result_card" class="card">
+        <img src="/images/train.png">
+        <section></section>
+        <p class="result_text">It's time to book your future trip</p>
+    </div>
+    <!-- <div id="result_card" class="card">
+        <div id="ticket" >
+            <div id="trajet">
+                Paris>Lyon
+            </div>
+            <div>heure départ</div>
+            <div>price</div>
+            <div><button>Book</button></div>
+        </div>
+    
+    </div> -->
+</div>
 
 
 
     <script src="script_index.js"></script>
 </body>
-
 
 
 </html>
