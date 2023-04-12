@@ -1,3 +1,4 @@
+
 document.querySelector('#search_date').valueAsDate = new Date();
 
 
