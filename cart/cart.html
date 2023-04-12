@@ -1,14 +1,63 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
+    <div id="header">
+        <div class="logo">
+            <h1><a href="/index/index.html">Tickethack</a></h1>
+        </div>
+
+        <div class="menu">
+            <p id="btn-cart"><a href="/cart/cart.html">Cart</a></p>
+            <p id="btn-booking"><a href="/booking/booking.html">Bookings</a></p>
+        </div>
+    </div>
+
+    <div id="container">
+       
+         <div id="cart">
+
+            <h2>My cart</h2>
 
 
+            <div class="cart_trip">
+                <div>voyage</div>
+                <div>heure de départ</div>
+                <div class="price">130</div>
+                <span class="btn-delete">X</span>
+
+            </div>
+
+            <div class="cart_trip">
+                <div>voyage</div>
+                <div>heure de départ</div>
+                <div class="price">170</div>
+                <span class="btn-delete">X</span>
+
+            </div>
+
+
+            <div id="total-bar">
+        
+                <span>TOTAL : <span id="count"></span></span>
+    
+                <button id="btn-purchase">Purchase</button>
+    
+    
+             </div>
+          
+
+         </div>
+    
+       
+        
+      
+       </div>
 
     <script src="script_cart.js"></script>
 </body>
