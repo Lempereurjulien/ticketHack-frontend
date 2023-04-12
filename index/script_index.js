@@ -60,7 +60,6 @@ function trips(){
             })
             
         })
-        location.assign('http://localhost:5500/cart/cart.html')
     }
 }
 
