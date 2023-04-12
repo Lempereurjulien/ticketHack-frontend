@@ -71,6 +71,11 @@ function supprPanier(){
 
 
 // MAJ bouton purchase
+function purchase(){
+   fetch('http://localhost:3000/carts/purchase')
+   .then(location.assign('http://localhost:5500/booking/booking.html'))
+}
+
 
 /*document.querySelectorAll('.btn-purchase')[i].addEventListener('click', function(){
 
