@@ -1,6 +1,7 @@
 // suite ajout trip
-function cartAdded(){
-  fetch(`http://localhost:3000/cart` )
+document.querySelector("#total-bar").style.display = "none";
+
+  fetch(`http://localhost:3000/carts`)
   .then(response => response.json())
   .then(data => {
     if(data.carts.length === 0){
@@ -9,95 +10,95 @@ function cartAdded(){
       <p class='nocart'>No tickets in your cart.</p>
       <p class='no cart'>Why not plan a trip ?</p>
 
-      `
-  } else {
-    document.querySelector('#container').innerHTML = 
-    const newCart = ` 
-                <div id="cart_trip">
-                <div>voyage</div>
-                <div>heure de départ</div>
-                <div class="price">130</div>
-                <span class="btn-delete">X</span>
-
-            </div>
-  
-`; 
-// Somme du panier
-for (let i = 0; i < document.querySelectorAll('.price').length; i++) {
-   
-  let cartCount = Number(document.querySelector('.price').textContent);
-  
-  let total = 0;
-total += cartCount;
-console.log(cartCount);
-  document.querySelector('#count').textContent = total;
-    
-};
+      `}
+  else {
+    for(let dat in data){
+      for(let i =0; i<data[dat].length; i++){
+      document.querySelector('#container').innerHTML += 
+       ` 
+            <div id="cart">
+                <h2>My cart</h2>
+                  <div id="cart_trip">
+                  <div>${data[dat][i].panier[0].departure} > ${data[dat][i].panier[0].arrival}</div>
+                  <div>${moment(data[dat][i].panier[0].date).format('HH:mm')}</div>
+                  <div class="priceDiv"><span class="price">${data[dat][i].panier[0].price}</span>€</div>
+                  <span class="btn-delete" id="${data[dat][i].panier[0]._id}">X</span>
+                 
+              </div>
+              </div>
+                
+  `};  
+  document.querySelector("#total-bar").style.display = "block"
 }
-  })
-};
-
-
-
+somme();
+supprPanier();
+}});
 
 
 
 // Somme du panier
-
-for (let i = 0; i < document.querySelectorAll('.price').length; i++) {
-   
-    let cartCount = Number(document.querySelector('.price').textContent);
-    
-    let total = 0;
-total += cartCount;
-console.log(cartCount);
-    document.querySelector('#count').textContent = total;
-      
-};
-
-
-
+function somme(){
+  let total =0;
+    const data = document.querySelectorAll(".price");
+    for(let dat in data){
+      if(data[dat].textContent !== undefined){
+        total+=Number(data[dat].textContent);
+      }
+    }
+    document.querySelector("#count").textContent = total;  
+  }
 
 
 // mise à jour suppression trip
-for (let i = 0; i < document.querySelectorAll('.btn-delete').length; i++) {
-    document.querySelectorAll('.btn-delete')[i].addEventListener('click', function()
-      {
-          // row supprimés
+function supprPanier(){
+  console.log(document.querySelectorAll(".btn-delete"))
+  for(let i = 0; i<document.querySelectorAll(".btn-delete").length; i++){
+    document.querySelectorAll(".btn-delete")[i].addEventListener('click',
+    function(){
+       fetch(`http://localhost:3000/carts/${this.id}`, {
+        method: "DELETE",
+        headers: {'Content-Type': 'application/json'},
+        
+       })
+       .then(() =>{
         this.parentNode.remove();
-  
-  
-        // panier vidé
-        for (let i = 0; i < document.querySelectorAll('.price').length; i++) {
-   
-            let cartCount2 = Number(document.querySelector('.price').textContent);
-            
-            let total2 = 0;
-        total2 += cartCount2;
-
-        document.querySelector('#count').textContent = total2;
-      }
+        somme();
+       })
+      })
     }
-    )
-  };
-
+    
+}
 
 
 // MAJ bouton purchase
-for (let i = 0; i < document.querySelectorAll('.btn-purchase').length; i++) {
-  document.querySelectorAll('.btn-purchase')[i].addEventListener('click', function()
-    {
-        // row supprimés
-      this.parentNode.remove();
 
+/*document.querySelectorAll('.btn-purchase')[i].addEventListener('click', function(){
 
-      // panier vidé
-      const cartCount2 = document.querySelectorAll('p').length;// à modifier
-      document.querySelector('#count').textContent = cartCount2;
-
-
-        // trip envoyé page bookings
+  fetch(`http://localhost:3000/carts/purchase`){
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+})
+    
+  for (let dat in data){
+    for(let i =0; i < data[dat].length; i++){
+      if (data[dat][i].isBook === true){
+        this.parentNode.remove(); // row supprimés
+        somme();// panier vide
+                  // trip envoyé page bookings
 
     }
-  )
+}}
+
 }
+  )
+
+*/
+  fetch(`http://localhost:3000/carts/purchase`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.isBook)})
