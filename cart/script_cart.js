@@ -58,10 +58,10 @@ function supprPanier(){
        fetch(`http://localhost:3000/carts/${this.id}`, {
         method: "DELETE",
         headers: {'Content-Type': 'application/json'},
-        
        })
        .then(() =>{
-        this.parentNode.remove();
+        console.log()
+        this.parentNode.parentNode.remove();
         somme();
        })
       })
