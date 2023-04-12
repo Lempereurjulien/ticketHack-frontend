@@ -1,0 +1,31 @@
+body{
+    background-color: gray;
+}
+
+#content{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#card{
+    background-color: white;
+    width: 25vh;
+}
+
+#infoTrips{
+    display: flex;
+    flex-direction: row;
+}
+#title{
+    background-color: white;
+    text-align: center;
+}
+.infoTrips{
+    background-color: white;
+}
+.info{
+    background-color: white;
+    margin: 15px;
+}

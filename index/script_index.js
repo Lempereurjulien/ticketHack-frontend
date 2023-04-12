@@ -1,3 +1,4 @@
+
 document.querySelector('#search_date').valueAsDate = new Date();
 
 
@@ -20,7 +21,6 @@ function searchTrips(){
             `
         }
         else{
-            document.querySelector('#result_card').innerHTML ='';
             for(let dat in data){
                 for(let i =0; i<data[dat].length; i++){
                 document.querySelector('#result_card').innerHTML +=
