@@ -1,3 +1,4 @@
+
 fetch('http://localhost:3000/booking')
 .then(response => response.json())
 .then(data=> {
@@ -9,19 +10,20 @@ fetch('http://localhost:3000/booking')
     }
     else{
         document.querySelector(".card").innerHTML ='';
-        const timeBf = new Date().getHours();
-        console.log(timeBf)
         for(let dat in data){
             for(let i =0; i<data[dat].length; i++){
-                
-                    console.log(data[dat][i]);
+                console.log(data)
+                 const actualDate = moment(data.date);
+                 const dateTrain = moment(data[dat][i].panier.date)
+                 var diff = moment(dateTrain).diff(moment(actualDate));
+                const duration= moment(diff).format('HH');
                 document.querySelector(".card").innerHTML +=
                     `
                     <div id="infoTrips">
                         <div class="info">${data[dat][i].panier.departure} > ${data[dat][i].panier.arrival}</div>
                         <div class="info">${moment(data[dat][i].panier.date).format('HH:mm')}</div>
-                        <div class="info">${data[dat][i].panier.price}</div>
-                        <div class="info">Depeart in hours</div>
+                        <div class="info">${data[dat][i].panier.price}€</div>
+                        <div class="info">Departure in ${duration} hours</div>
                     </div>`
                 }
             }
