@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+}
+
+#header {
+  display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ border: 0.5 black solid;
+ background-color: #ffffff;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.logo {
+justify-content: flex-start;
+}
+h1 {
+  color:rgb(0, 255, 255),
+}
+
+#btn-cart {
+color:black;
+margin-right:50px;
+}
+#btn-booking {
+color:black;
+
+}

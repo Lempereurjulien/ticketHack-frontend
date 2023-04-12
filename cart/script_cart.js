@@ -60,8 +60,6 @@ console.log(cartCount);
 
 
 // mise à jour suppression trip
-
-
 for (let i = 0; i < document.querySelectorAll('.btn-delete').length; i++) {
     document.querySelectorAll('.btn-delete')[i].addEventListener('click', function()
       {
@@ -103,6 +101,3 @@ for (let i = 0; i < document.querySelectorAll('.btn-purchase').length; i++) {
     }
   )
 }
-
-
-
