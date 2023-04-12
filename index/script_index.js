@@ -55,12 +55,7 @@ function trips(){
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            })
-            // .then(location.assign('http://localhost:5500/cart/cart.html'))
-            
+            .then(alert('Trajet ajouté au panier'))
         })
     }
     

@@ -1,5 +1,7 @@
 body{
     background-color: gray;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
 }
 
 #content{
@@ -17,6 +19,9 @@ body{
 #infoTrips{
     display: flex;
     flex-direction: row;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 #title{
     background-color: white;
